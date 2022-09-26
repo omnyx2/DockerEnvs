@@ -6,7 +6,6 @@ RUN apt-get update
 RUN apt-get install -y git && apt-get install -y neovim
 RUN apt-get install -y wget && apt-get install -y curl && apt-get install -y unzip && apt-get install -y ufw
 
-RUN apt-get install python3.9
 RUN python3 -m pip install ipykernel -U --user --force-reinstall
 RUN pip install jupyter notebook
 RUN pip install tensorboard
@@ -16,7 +15,7 @@ RUN git config --global user.email omnyx2@gmail.com
 RUN git config --global user.name omnyx2
 
 RUN git clone https://github.com/omnyx2/Multimodal-Categorization-of-Crisis-Events-in-Social-Media-1.git
-RUN mv /workspace/Multimodal-Categorization-of-Crisis-Events-in-Social-Media /workspace/project
+RUN mv /workspace/Multimodal-Categorization-of-Crisis-Events-in-Social-Media-1 /workspace/project
 RUN ls && cd project && mkdir datasets && ls && cd ./datasets && \
     wget https://crisisnlp.qcri.org/data/crisismmd/CrisisMMD_v2.0.tar.gz && \ 
     tar -zxf CrisisMMD_v2.0.tar.gz && \
